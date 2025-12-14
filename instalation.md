@@ -85,3 +85,18 @@ Testování API (Insomnia/Postman)
 V kořenovém adresáři projektu je k dispozici export pro Insomnii ( insomnie_shopping_list.json a env_5500.json). 
 insomnie_shopping_list.json =>import endpointů
 env_5500.json => nastavení prostředí
+
+
+/backend
+    /controllers    # Logika endpointů
+    /models         # Mongoose schémata (User, ShoppingList)
+    /routes         # Definice URL cest
+    app.js          # Hlavní soubor serveru
+
+/frontend
+    /src
+        /api        # Komunikace s API a Mock data
+        /components # Znovupoužitelné UI komponenty (Cards, Modals)
+        /context    # AuthContext (stav přihlášení)
+        /hooks      # Oddělená logika (Custom Hooks)
+        /pages      # Hlavní stránky (Dashboard, ListDetail, Login)
