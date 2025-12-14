@@ -11,7 +11,6 @@ export const singUp = async(req, res, next) => {
     try {
         const { name, email, password } = req.body;
 
-        // --- OPRAVENO ZDE ---
         const existingUser = await User.findOne({ email }); 
 
         if(existingUser){
@@ -87,4 +86,16 @@ export const singIn = async(req,res,next) => {
     }
 }
 
-export const singOut = async(req,res,next) => {}
+export const signOut = async (req, res, next) => {
+    try {
+        
+        res.clearCookie('token'); 
+
+        res.status(200).json({
+            success: true,
+            message: 'User signed out successfully'
+        });
+    } catch (error) {
+        next(error);
+    }
+}

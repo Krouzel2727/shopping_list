@@ -1,0 +1,478 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-05-20T10:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.0",
+  "resources": [
+    {
+      "_id": "req_signup",
+      "parentId": "fld_auth",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/auth/sign-up",
+      "name": "Sign Up (Registrace)",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Test User\",\n\t\"email\": \"test@test.cz\",\n\t\"password\": \"password123\",\n\t\"passwordConfirm\": \"password123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700000000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_signin",
+      "parentId": "fld_auth",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/auth/sign-in",
+      "name": "Sign In (Přihlášení)",
+      "description": "Po úspěšném přihlášení zkopíruj 'token' z odpovědi a vlož ho do Environment proměnné 'token'.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"test@test.cz\",\n\t\"password\": \"password123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1699999999900,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_signout",
+      "parentId": "fld_auth",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/auth/sign-out",
+      "name": "Sign Out",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999800,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_list",
+      "parentId": "fld_lists",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists",
+      "name": "Create Shopping List",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Můj velký nákup\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1700000000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_lists",
+      "parentId": "fld_lists",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists",
+      "name": "Get All Lists",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999900,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_one_list",
+      "parentId": "fld_list_ops",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}",
+      "name": "Get One List",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1700000000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_list",
+      "parentId": "fld_list_ops",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}",
+      "name": "Update Name",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Upravený název nákupu\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999900,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_archive_list",
+      "parentId": "fld_list_ops",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}/archive",
+      "name": "Archive / Unarchive",
+      "method": "PUT",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999800,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_list",
+      "parentId": "fld_list_ops",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}",
+      "name": "Delete List",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999700,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_add_item",
+      "parentId": "fld_items",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}/items",
+      "name": "Add Item",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Mléko\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1700000000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_resolve_item",
+      "parentId": "fld_items",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}/items/ITEM_ID_ZDE/resolve",
+      "name": "Resolve Item (Splnit)",
+      "description": "Nahraď ITEM_ID_ZDE v URL skutečným ID položky.",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"resolved\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999900,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_item",
+      "parentId": "fld_items",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}/items/ITEM_ID_ZDE",
+      "name": "Delete Item",
+      "description": "Nahraď ITEM_ID_ZDE v URL skutečným ID položky.",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999800,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_add_member",
+      "parentId": "fld_members",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}/members",
+      "name": "Add Member",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"pepa@email.cz\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1700000000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_leave_list",
+      "parentId": "fld_members",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}/members/leave",
+      "name": "Leave List",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999900,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_remove_member",
+      "parentId": "fld_members",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/shopping-lists/{{ list_id }}/members/MEMBER_ID_ZDE",
+      "name": "Remove Member",
+      "description": "Nahraď MEMBER_ID_ZDE v URL.",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1699999999800,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_users",
+      "parentId": "fld_users",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "url": "{{ base_url }}/users",
+      "name": "Get All Users",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "metaSortKey": -1700000000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_auth",
+      "parentId": "wrk_shopping",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Auth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700000000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_lists",
+      "parentId": "wrk_shopping",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Shopping Lists",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699999999900,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_list_ops",
+      "parentId": "fld_lists",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Specific List Operations",
+      "description": "Nastav si proměnnou prostředí 'list_id' nebo ji přepiš v URL.",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699999999800,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_items",
+      "parentId": "fld_lists",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Items",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699999999700,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_members",
+      "parentId": "fld_lists",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Members",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699999999600,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_users",
+      "parentId": "wrk_shopping",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Users",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699999999800,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_shopping",
+      "parentId": null,
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Shopping List API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_shopping",
+      "parentId": "wrk_shopping",
+      "modified": 1700000000000,
+      "created": 1700000000000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:5500/api/v1",
+        "token": "SEM_VLOZ_TOKEN_PO_LOGINU",
+        "list_id": "SEM_VLOZ_ID_SEZNAMU_PRO_TESTY"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "token",
+          "list_id"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1700000000000,
+      "_type": "environment"
+    }
+  ]
+}

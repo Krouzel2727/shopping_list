@@ -1,0 +1,29 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "resources": [
+    {
+      "_id": "env_shopping_5500",
+      "parentId": "__WORKSPACE_ID__",
+      "modified": 1600000000000,
+      "created": 1600000000000,
+      "name": "Shopping List Env (Port 5500)",
+      "data": {
+        "base_url": "http://localhost:5500/api/v1",
+        "token": "SEM_VLOZ_TOKEN_PO_LOGINU",
+        "list_id": "SEM_VLOZ_ID_SEZNAMU"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "token",
+          "list_id"
+        ]
+      },
+      "color": "#7d69cb",
+      "isPrivate": false,
+      "metaSortKey": 1700000000000,
+      "_type": "environment"
+    }
+  ]
+}
